@@ -38,12 +38,12 @@ public class UsuarioEntity implements Serializable {
 
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "fk_rol_usuario", nullable = false)
+    @JoinColumn(name = "fk_rol_usuario")
     private com.magneticmediadatabase.bcs.infraestructure.entity.RolUsuarioEntity fkRolUsuario;
 
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "fk_Estado_Usuario", nullable = false)
+    @JoinColumn(name = "fk_Estado_Usuario")
     private com.magneticmediadatabase.bcs.infraestructure.entity.EstadoUsuarioEntity fkEstadoUsuario;
 
     @OneToMany(mappedBy = "fkUsuarios")

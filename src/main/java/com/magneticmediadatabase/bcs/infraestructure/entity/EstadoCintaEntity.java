@@ -17,12 +17,12 @@ import java.util.Set;
 public class EstadoCintaEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idEstado_cintas", nullable = false)
+    @Column(name = "idEstado_cintas")
     private Integer id;
 
     @Size(max = 20)
     @NotNull
-    @Column(name = "nombre_estado_cintas", nullable = false, length = 20)
+    @Column(name = "nombre_estado_cintas", length = 20)
     private String nombreEstadoCintas;
 
     @OneToMany(mappedBy = "fkEstadoCintas")

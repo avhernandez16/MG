@@ -17,42 +17,42 @@ import java.util.Set;
 public class CatalogoEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idCatalogo", nullable = false)
+    @Column(name = "idCatalogo")
     private Integer id;
 
     @Size(max = 20)
     @NotNull
-    @Column(name = "nombre_catalogo", nullable = false, length = 20)
+    @Column(name = "nombre_catalogo", length = 20)
     private String nombreCatalogo;
 
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "fk_Usuarios", nullable = false)
+    @JoinColumn(name = "fk_Usuarios")
     private UsuarioEntity fkUsuarios;
 
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "fk_Ciclo_catalogo", nullable = false)
+    @JoinColumn(name = "fk_Ciclo_catalogo")
     private com.magneticmediadatabase.bcs.infraestructure.entity.CicloCatalogoEntity fkCicloCatalogo;
 
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "fk_Consola", nullable = false)
+    @JoinColumn(name = "fk_Consola")
     private com.magneticmediadatabase.bcs.infraestructure.entity.ConsolaEntity fkConsola;
 
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "fk_Programa", nullable = false)
+    @JoinColumn(name = "fk_Programa")
     private com.magneticmediadatabase.bcs.infraestructure.entity.ProgramaEntity fkPrograma;
 
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "fk_Tecnologias", nullable = false)
+    @JoinColumn(name = "fk_Tecnologias")
     private com.magneticmediadatabase.bcs.infraestructure.entity.TecnologiaEntity fkTecnologias;
 
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "fk_IP", nullable = false)
+    @JoinColumn(name = "fk_IP")
     private com.magneticmediadatabase.bcs.infraestructure.entity.IpEntity fkIp;
 
     @OneToMany(mappedBy = "fkCatalogo")
